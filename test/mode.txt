@@ -1,0 +1,5 @@
+0 - ERROR
+1 - DIR
+2 - DIR, DIR
+3 - SPEED, DIR
+4 - SPEED, DIR, DIR

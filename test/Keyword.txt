@@ -1,0 +1,12 @@
+# lib color
+
+# KEYWORD1 – big orange, class
+# KEYWORD2 – orange, func()
+# LITERAL1 – blue, const
+
+testLib  KEYWORD1
+Color  KEYWORD1
+setColor  KEYWORD2
+setBright  KEYWORD2
+getColor  KEYWORD2
+getBright  KEYWORD2
