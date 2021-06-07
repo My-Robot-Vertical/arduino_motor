@@ -3,13 +3,18 @@
 //motor test_motor(&input, &output, &setpoint, Kp1, Ki1, Kd1, DIRECT);
 motor test_motor;
 
+
+
 void setup() {
   Serial.begin(9600);
   //test_motor.SetMode("SPEED", "DIR", "DIR");
   test_motor.SetMode("DIR",3, "DIR",4);
   //test_motor.SetPins(3, 4);
   
-  Serial.println(test_motor.TestMode());
+  //Serial.println(test_motor.TestMode());
+  //Serial.print("version: ");
+  //Serial.println();
+  //test_motor.SetSpeed(103);
 }
 
 void loop() {

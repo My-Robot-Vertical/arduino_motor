@@ -1,12 +1,15 @@
-# lib color
+################### lib colors ###################
 
-# KEYWORD1 – big orange, class
-# KEYWORD2 – orange, func()
-# LITERAL1 – blue, const
+####### KEYWORD1 – big orange - data types #######
 
-testLib  KEYWORD1
-Color  KEYWORD1
-setColor  KEYWORD2
-setBright  KEYWORD2
-getColor  KEYWORD2
-getBright  KEYWORD2
+motor     KEYWORD1
+#TestMode KEYWORD1
+
+### KEYWORD2 – orange - methods and functions ####
+
+SetMode   KEYWORD2
+TestMode  KEYWORD2
+
+########### LITERAL1 – blue - constant ###########
+
+
