@@ -3,7 +3,7 @@
 
 #define motor_lib_version  1.0
 
-class motor {
+class Motor {
   
   public:
 

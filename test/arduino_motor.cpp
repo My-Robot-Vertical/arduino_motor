@@ -12,7 +12,7 @@
 //  
 //}
 
-void motor::SetMode(String a, int a_pin, String b="", int b_pin=0,  String c="", int c_pin=0) { // задаем пины для работы с шилдом мотора
+void Motor::SetMode(String a, int a_pin, String b="", int b_pin=0,  String c="", int c_pin=0) { // задаем пины для работы с шилдом мотора
   char dir = 0, pwm = 0;
 
   // проверка на корректность ввода
@@ -64,23 +64,23 @@ void motor::SetMode(String a, int a_pin, String b="", int b_pin=0,  String c="",
   _max_speed = 100; // значение скорости по умолчанию
 }
 
-void motor::SetSpeed(int predel) { // настраиваем новые значения, которые будут масштабироваться в 255 на мотор
+void Motor::SetSpeed(int predel) { // настраиваем новые значения, которые будут масштабироваться в 255 на мотор
   if (predel<1) Serial.println("ERROR: <SetSpeed> - invalid value");
   else _max_speed = predel; 
 } 
 
-int motor::TestMode() { return _mode; } // проверяем режим работы
+int Motor::TestMode() { return _mode; } // проверяем режим работы
 
-void motor::run(int speed) {
+void Motor::run(int speed) {
   if (_mode==0) return;
   if (_mode==3 || _mode==4) analogWrite(_pwm_pin, map(constrain(abs(speed),0,_max_speed),0,_max_speed,0,255));
   digitalWrite(_dir_1_pin,speed>0);
   if (_mode==2 || _mode==4) digitalWrite(_dir_2_pin,speed<0);
 }
 
-void motor::stop() { motor::run(0); }
+void Motor::stop() { Motor::run(0); }
 
-void motor::block() {
+void Motor::block() {
   if (_mode==3 || _mode==4) analogWrite(_pwm_pin, 0);
   if (_mode==2 || _mode==4) {
     digitalWrite(_dir_1_pin,1);
@@ -91,7 +91,7 @@ void motor::block() {
   }
 }
 
-float motor::version(float a=0) {
+float Motor::version(float a=0) {
    if (a==0) return motor_lib_version;
    if (a==motor_lib_version) return 1;
    Serial.println("WARNING: lib <arduino_motor> have more version!");

@@ -1,14 +1,21 @@
 #include "arduino_motor.h"
+#include "my_robor_servo.h"
+
+//servo_motor_data_cell *_servo_motor_data_my = 0;
 
 //motor test_motor(&input, &output, &setpoint, Kp1, Ki1, Kd1, DIRECT);
-motor test_motor;
+Motor test_motor;
 
-
+ServoMotor test_servo(6);
 
 void setup() {
-  Serial.begin(9600);
+  
   //test_motor.SetMode("SPEED", "DIR", "DIR");
   test_motor.SetMode("DIR",3, "DIR",4);
+  Serial.begin(9600);
+  //teeeeeeeeeeeeeeeest();
+  print_servo_data();
+  Serial.println("end");
   //test_motor.SetPins(3, 4);
   
   //Serial.println(test_motor.TestMode());
