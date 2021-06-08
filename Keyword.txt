@@ -1,0 +1,24 @@
+################### lib colors ###################
+
+####### KEYWORD1 – big orange - data types #######
+
+using_servo           KEYWORD1
+ServoMotor            KEYWORD1
+motor                 KEYWORD1
+#TestMode             KEYWORD1
+
+### KEYWORD2 – orange - methods and functions ####
+
+write                 KEYWORD2
+writeMicroseconds     KEYWORD2
+read                  KEYWORD2
+ServoUpdate           KEYWORD2
+SetMode               KEYWORD2
+TestMode              KEYWORD2
+servo_motor_data_cell KEYWORD2
+
+########### LITERAL1 – blue - constant ###########
+
+_servo_motor_data_my  LITERAL1
+
+
