@@ -10,14 +10,6 @@
 
 servo_motor_data_cell *_servo_motor_data_my = 0;
 
-/*void teeeeeeeeeeeeeeeest() {
-  servo_motor_data_cell* &data = _servo_motor_data_my;
-  data = new servo_motor_data_cell;
-  data->pin = 7;
-  data->angle = 8;
-  data->next_cell = 0;
-}*/
-
 ServoMotor::ServoMotor(int pin, servo_motor_data_cell* &data = _servo_motor_data_my) {
   pinMode(pin, OUTPUT);
   _pin = pin;
@@ -32,16 +24,16 @@ ServoMotor::ServoMotor(int pin, servo_motor_data_cell* &data = _servo_motor_data
 }
 
 void ServoMotor::write(int angle, servo_motor_data_cell* &data = _servo_motor_data_my) {
-  if (!data) { // ячейки не существует
+  if (!data) {
     Serial.print("ERROR: no servo on pin ");
     Serial.println(_pin);
   }
-  else { // начинаем искать нужную ячейку
-    if (_pin==data->pin) { // это та ячейка
-      ServoMotor_my_write(_pin, angle); // крутим серву 
-      data->angle=angle; // записываем новый угол
+  else {
+    if (_pin==data->pin) {
+      ServoMotor_my_write(_pin, angle);
+      data->angle=angle;
     }
-    else ServoMotor::write(angle, data->next_cell); // это не та ячейка, идем дальше
+    else ServoMotor::write(angle, data->next_cell);
   }
 }
 
@@ -86,13 +78,3 @@ void ServoUpdate(servo_motor_data_cell* data = _servo_motor_data_my) {
     ServoUpdate(data->next_cell);
   }
 }
-
-
-
-//void motor::motor() {
-//  
-//}
-
-/*void ServoMotor::SetMode() {
-  
-}*/
