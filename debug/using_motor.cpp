@@ -12,6 +12,8 @@
 //  
 //}
 
+// #include <filters/alfaBeta.h>
+
 void Motor::SetMode(String a, int a_pin, String b="", int b_pin=0,  String c="", int c_pin=0) { // задаем пины для работы с шилдом мотора
   char dir = 0, pwm = 0;
 
